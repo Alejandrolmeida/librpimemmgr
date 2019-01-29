@@ -31,17 +31,17 @@ find_package(PkgConfig)
 #     endif ()
 # endif ()
 
-pkg_check_modules(VCSM vcsm=1)
-if (NOT VCSM_FOUND)
-    message(STATUS "Adding /opt/vc/lib/pkgconfig to PKG_CONFIG_PATH")
-    set(ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:/opt/vc/lib/pkgconfig")
-    pkg_check_modules(VCSM vcsm=1)
-    if (NOT VCSM_FOUND)
-        message (FATAL_ERROR "vcsm not found even in /opt/vc/lib. "
-                             "Building on non-RPi host? "
-                             "Please specify PKG_CONFIG_PATH.")
-    endif ()
-endif ()
+#pkg_check_modules(VCSM vcsm=1)
+#if (NOT VCSM_FOUND)
+#    message(STATUS "Adding /opt/vc/lib/pkgconfig to PKG_CONFIG_PATH")
+#    set(ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:/opt/vc/lib/pkgconfig")
+#    pkg_check_modules(VCSM vcsm=1)
+#    if (NOT VCSM_FOUND)
+#        message (FATAL_ERROR "vcsm not found even in /opt/vc/lib. "
+#                             "Building on non-RPi host? "
+#                             "Please specify PKG_CONFIG_PATH.")
+#    endif ()
+#endif ()
 
 pkg_check_modules(MAILBOX REQUIRED libmailbox>=2.0.0)
 
